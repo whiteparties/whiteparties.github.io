@@ -4,20 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- ============ SICUREZZA ============
-       CSP: gli script sono permessi SOLO da gc.zgo.at (GoatCounter).
-       Niente 'unsafe-inline' su script-src -> un eventuale <script> iniettato
-       (XSS) viene comunque bloccato dal browser.
-       Se un giorno aggiungi tuo JS: mai innerHTML con dati esterni, usa textContent.
-       NOTA: sostituisci TUO-CODICE con il codice scelto su goatcounter.com (2 punti qui sotto + lo script in fondo).
-  -->
+
   <meta http-equiv="Content-Security-Policy"
         content="default-src 'none';
                  script-src https://gc.zgo.at;
-                 connect-src https://TUO-CODICE.goatcounter.com;
+                 connect-src https://marphis.goatcounter.com;
                  style-src 'unsafe-inline' https://fonts.googleapis.com;
                  font-src https://fonts.gstatic.com;
-                 img-src 'self' data: https://TUO-CODICE.goatcounter.com;
+                 img-src 'self' data: https://marphis.goatcounter.com;
                  base-uri 'none';
                  form-action 'none';
                  frame-ancestors 'none'">
@@ -43,8 +37,7 @@
     }
 
     /* ---------- MODALITÀ NOTTE (senza JavaScript) ----------
-       Il checkbox #theme è nascosto; quando è spuntato, body:has()
-       sostituisce le variabili colore. Niente script = CSP intatta. */
+     
     body:has(#theme:checked) {
       --bg:    #1A1A1A;   /* grigio tendente al nero */
       --ink:   #F2F2F2;
@@ -59,7 +52,7 @@
 
     body {
       background: var(--bg);
-      /* griglia di puntini in stile Nothing */
+      
       background-image: radial-gradient(var(--line) 1px, transparent 1px);
       background-size: 22px 22px;
       color: var(--ink);
@@ -315,7 +308,7 @@
   </style>
 </head>
 <body>
-  <!-- Interruttore tema: checkbox nascosto, gestito solo via CSS -->
+
   <input type="checkbox" id="theme" aria-label="Enable night mode">
 
   <main class="wrap">
@@ -380,8 +373,7 @@
           <p class="cv-meta">
             <b>CV — Oleksiy Teslya</b>
           </p>
-          <!-- data-goatcounter-click: conta i click su questo bottone
-               come evento "cv-download" nella tua dashboard GoatCounter. -->
+         
           <a class="btn" href="cv.pdf" download="CV-Oleksiy-Teslya.pdf"
              data-goatcounter-click="cv-download">Download CV</a>
         </div>
@@ -391,7 +383,6 @@
       <section aria-labelledby="links">
         <h2 id="links"><span class="n">(05)</span> Links</h2>
         <ul class="links">
-          <!-- Sostituisci gli href con i tuoi URL reali. -->
           <li><a href="https://github.com/whiteparties" target="_blank" rel="noopener noreferrer">GitHub <span class="where">github.com/whiteparties</span></a></li>
           <li><a href="https://www.linkedin.com/in/marphis/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="where">linkedin.com/in/marphis</span></a></li>
           <li><a href="mailto:loshalavoro@gmail.com" rel="noopener noreferrer">Email <span class="where">loshalavoro@gmail.com</span></a></li>
@@ -407,10 +398,8 @@
   </main>
 
   <!-- ============ STATISTICHE (GoatCounter) ============
-       Conta le visite alla pagina e i click sul bottone CV
-       (grazie all'attributo data-goatcounter-click).
-       Sostituisci TUO-CODICE con il codice scelto su goatcounter.com. -->
-  <script data-goatcounter="https://TUO-CODICE.goatcounter.com/count"
+
+  <script data-goatcounter="https://marphis.goatcounter.com/count"
           async src="https://gc.zgo.at/count.js"></script>
 </body>
 </html>
